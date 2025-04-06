@@ -5,10 +5,10 @@ import { useNavigate } from 'react-router-dom';
 
 interface TestCardProps {
   test: Test;
-  onDelete: (id: string) => void;
+  onDelete?: (id: string) => void;
 }
 
-const TestCard: React.FC<TestCardProps> = ({ test, onDelete }) => {
+const TestCard: React.FC<TestCardProps> = ({ test }) => {
   const { deleteTest } = useTests();
   const navigate = useNavigate();
   const formattedDate = new Date(test.lastModified).toLocaleDateString();
